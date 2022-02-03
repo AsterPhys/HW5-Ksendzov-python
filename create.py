@@ -95,15 +95,27 @@ def phone_number_check(phone_number):
             if len(phone_number) == 0:
                 phone_number = input("This phone number is empty. Please, enter another phone number: ")
                 flag = False
-            if flag and not(phone_number[:1] == "8" or phone_number[:2] == "+7"):
+            if flag and not(phone_number[0] == "8" or phone_number[:2] == "+7"):
                 phone_number = input("We provide only russian numbers (starting with 8 or +7). Please, enter another phone number: ")
                 flag = False
-            if flag and phone_number[:1] == "8" and len(phone_number) != 11:
+            if flag and phone_number[0] == "8" and len(phone_number) != 11:
                 phone_number = input("This phone number is not correct. Please, enter another phone number (fe: 88005553535 or +78005553535): ")
                 flag = False
             if flag and phone_number[:2] == "+7" and len(phone_number) != 12:
                 phone_number = input("This phone number is not correct. Please, enter another phone number (fe: 88005553535 or +78005553535): ")
                 flag = False
+            if flag and phone_number[0] == "8":
+                try:
+                    phone_number = input("This phone number is not correct. Please, enter another phone number (fe: 88005553535 or +78005553535): ")
+                    int(phone_number[1:])
+                except:
+                    flag = False
+            if flag and phone_number[:2] == "+7":
+                try:
+                    phone_number = input("This phone number is not correct. Please, enter another phone number (fe: 88005553535 or +78005553535): ")
+                    int(phone_number[2:])
+                except:
+                    flag = False
         else:
             flag = True
     return phone_number
