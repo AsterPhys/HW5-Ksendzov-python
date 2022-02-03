@@ -1,0 +1,15 @@
+
+def help_func():
+    print("\n/create - creating a new account")
+    print("/delete - deleting account by entering email")
+    print("/read_email - reading account's information by entering email")
+    print("/read_all - show all info")
+    print("/update - updating information in account by entering email")
+    print("/close - finish the program")
+    print("/exit - leave the command (you can't leave /create)\n")
+    print("You can't use /close inside the command. Firstly, use /exit")
+    print(" " * 24 + "Creation of new account" + "\n")
+    print("🍒 We provide only gmail-, yandex- and mail- services")
+    print("🍒 Name can contain only latin letters")
+    print("🍒 Password must contain at least 1 number, 1 letter and 1 special symbol")
+    print("🍒 We provide only russian numbers (starting with +7/8)\n")
